@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: vpp88/studentregistry:latest
+    ports:
+      - "3031:3030" # Map port 3031 on the host to port 3030 in the container
+    environment:
+      - NODE_ENV=production

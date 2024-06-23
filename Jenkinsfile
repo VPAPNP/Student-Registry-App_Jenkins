@@ -16,20 +16,14 @@ pipeline {
                 bat 'npm run test'
             }
         }
-        stage('Approval') {
-            steps {
-                script {
+        
+        stage('Deploy') {
+            script {
                     def userInput = input(id: 'Deploy', message: 'Deploy to production?', parameters: [choice(name: 'Approve', choices: 'Yes\nNo', description: 'Approve deployment?')])
                     if (userInput == 'No') {
                         error 'Deployment aborted by user'
                     }
                 }
-            }
-        }
-        stage('Deploy') {
-            when {
-                expression { input('Deploy to production?') == 'Yes' }
-            }
             steps {
                 echo 'deploy_command_here' // Replace with your actual deployment command
             }

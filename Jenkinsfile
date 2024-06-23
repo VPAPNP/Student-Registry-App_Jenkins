@@ -16,7 +16,6 @@ pipeline {
                 bat 'npm run test'
             }
         }
-        
         stage('Deploy') {
             steps {
                 script {
@@ -24,12 +23,10 @@ pipeline {
                     if (userInput == 'No') {
                         error 'Deployment aborted by user'
                     }
+                    // Replace 'deploy_command_here' with your actual deployment command
+                    echo 'deploy_command_here'
                 }
-            
-                echo 'deploy_command_here' // Replace with your actual deployment command
             }
         }
-        
-            
     }
 }

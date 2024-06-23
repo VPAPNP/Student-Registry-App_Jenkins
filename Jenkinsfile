@@ -18,6 +18,7 @@ pipeline {
         }
         
         stage('Deploy') {
+            steps {
             script {
                     def userInput = input(id: 'Deploy', message: 'Deploy to production?', parameters: [choice(name: 'Approve', choices: 'Yes\nNo', description: 'Approve deployment?')])
                     if (userInput == 'No') {
@@ -26,7 +27,6 @@ pipeline {
                 }
             
                 echo 'deploy_command_here' // Replace with your actual deployment command
-            
-        }
+            }
     }
 }

@@ -17,5 +17,12 @@ pipeline
                 bat 'npm audit'
             }
         }
+        stage('NPM Integration Test')
+        {
+            steps
+            {
+                bat 'npm run test'
+            }
+        }
     }
 }

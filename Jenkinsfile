@@ -24,9 +24,9 @@ pipeline {
                         error 'Deployment aborted by user'
                     }
                 }
-            steps {
+            
                 echo 'deploy_command_here' // Replace with your actual deployment command
-            }
+            
         }
     }
 }
